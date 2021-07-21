@@ -15,11 +15,12 @@ const HomeNavigator = createStackNavigator(
     {
             defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'rgb(28, 31, 45)'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#fff',
+                fontFamily: 'sans-serif',
             }
         }
     }
@@ -32,7 +33,7 @@ const ProjectsNavigator = createStackNavigator(
     {
             defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'rgb(28, 31, 45)'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -49,7 +50,7 @@ const ContactNavigator = createStackNavigator(
     {
             defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: 'rgb(28, 31, 45)'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -67,7 +68,7 @@ const MainNavigator = createDrawerNavigator(
 
     },
     {
-        drawerBackgroundColor: '#CEC8FF'
+        drawerBackgroundColor: 'rgb(209, 220, 255)'
     }
 )
 
