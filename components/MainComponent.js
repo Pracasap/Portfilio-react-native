@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
-import Projects from './ProjectComponents';
+import Projects from './ProjectComponent';
 import Contact from './ContactComponent';
 import Constants from 'expo-constants';
 import { View, Platform } from 'react-native';
