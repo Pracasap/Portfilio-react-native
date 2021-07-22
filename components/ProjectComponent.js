@@ -12,14 +12,13 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "white",
-        fontSize: 30,
-        lineHeight: 50,
+        fontSize: 17,
+        lineHeight: 40,
         fontWeight: "bold",
-        textAlign: "left",
+        textAlign: "center",
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
-        paddingLeft: 15,
         marginTop: 15
     },
 })
@@ -46,6 +45,7 @@ class Projects extends Component {
                 <Card>
                     <Image
                         transition
+                        // source={`${item.image}`}
                         source={require('./images/fineDine.png')}
                         style={{ width: '100%', height: 240 }}
                     />
@@ -65,7 +65,7 @@ class Projects extends Component {
                     resizeMode='cover'
                     source={require('./images/bg.jpg')}
                 >
-                <Text style={styles.text}>My Projects</Text>
+                <Text style={styles.text}>Projects that make my journey worthwhile</Text>
                 
                 <FlatList
                     data={this.state.projects}

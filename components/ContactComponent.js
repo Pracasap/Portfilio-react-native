@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "white",
-        fontSize: 38,
+        fontSize: 30,
         lineHeight: 50,
         fontWeight: "bold",
         textAlign: "left",
@@ -20,7 +20,21 @@ const styles = StyleSheet.create({
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
         paddingLeft: 15,
-        marginTop: 50
+        marginTop: 50,
+        marginBottom: 10
+    },
+    aboutText: {
+        color: "white",
+        fontSize: 17,
+        lineHeight: 25,
+        fontWeight: "normal",
+        textAlign: "left",
+        paddingLeft: 20,
+        paddingTop: 10,     
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowOffset: {width: -1, height: 1},
+        textShadowRadius: 4
     },
 })
 
@@ -38,14 +52,12 @@ class Contact extends Component {
                     resizeMode='cover'
                     source={require('./images/bg.jpg')}
                 >
-                <Text style={styles.text}>Get In Touch</Text>
-                <Card wrapperStyle={{padding: 10}}>
-                    <Text>Prakash Sapkota</Text>
-                    <Text>Dallas, TX 75287</Text>
-                    <Text style={{marginBottom: 10}}>U.S.A.</Text>
-                    <Text>Phone: 1-206-555-1234</Text>
-                    <Text>Email: Optimistic.prakash@gmail.com</Text>
-                </Card>
+                    <Text style={styles.text}>Get In Touch</Text>
+                    <Text style={styles.aboutText}>Prakash Sapkota</Text>
+                    <Text style={styles.aboutText}>Dallas, TX 75287</Text>
+                    <Text style={styles.aboutText}>U.S.A.</Text>
+                    <Text style={styles.aboutText}>Phone: 1-206-555-1234</Text>
+                    <Text style={styles.aboutText}>Email: Optimistic.prakash@gmail.com</Text>
                 </ImageBackground>
                 
                 
