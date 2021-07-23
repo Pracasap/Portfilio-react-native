@@ -2,7 +2,7 @@ export const PROJECTS = [
     {
         id: 0,
         name: "FineDine",
-        image: "../assets/images/fineDine.png",
+        image: "../components/images/fineDine.png",
         website: "https://finedine.netlify.app",
         github: "https://github.com/Pracasap/FineDine",
         codepen: false,

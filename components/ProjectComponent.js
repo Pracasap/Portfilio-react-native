@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         lineHeight: 40,
         fontWeight: "bold",
         textAlign: "center",
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
         marginTop: 15
@@ -42,19 +42,19 @@ class Projects extends Component {
         
         const renderProject = ({item}) => {
             return (
-                <Card>
+                <View style={{padding: 20}}>
                     <Image
                         transition
-                        // source={`${item.image}`}
-                        source={require('./images/fineDine.png')}
-                        style={{ width: '100%', height: 240 }}
+                        resizeMode="cover"
+                        //source={`${item.image}`}
+                        source={require(`./images/fineDine.png`)}
+                        style={{ width: '100%', height: 250, borderRadius: 1 }}
                     />
                     <ListItem
                         title={item.name}
                         subtitle={item.description}
-
                     />
-                </Card>
+                </View>
             );
         };
 

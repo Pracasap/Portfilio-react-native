@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
     },
     subHeadingText: {
         color: "rgb(254, 189, 107)",
-        fontSize: 14.5,
+        fontSize: 16,
         lineHeight: 30,
-        fontWeight: "bold",
+        fontWeight: "normal",
         textAlign: "center",
-        textShadowColor: 'rgba(0, 0, 0, 1)',
+        textShadowColor: 'rgba(0, 0, 0, 0.5)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 1
     },
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 10,
         marginTop: 15,
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        backgroundColor: "rgba(0, 0, 0, 0.2)",
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 4
@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         height:200,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+
     },
     buttonStyle:{
         shadowColor: '#000',
@@ -91,21 +92,19 @@ class Home extends Component {
                 <View style={{ flexDirection:"row" }}>
                     <View style={styles.buttonStyle}>
                         <Button
-                            color="#841584"
+                            color="#132659"
                             title="Projects"
-                            style={{color: 'black'}}
                             >
                         </Button>
                     </View>
                     <View style={styles.buttonStyle}>
                         <Button   
-                        color="#841584"
-                        title="Get In Touch">
+                            color="#132659"
+                            title="Get In Touch">
                         </Button>
                     </View>
                 </View>
                 </ImageBackground>
-                
             </View>
         );
     }

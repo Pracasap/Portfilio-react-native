@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
         fontWeight: "normal",
         textAlign: "left",
         paddingLeft: 20,
-        paddingTop: 10,     
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        paddingTop: 10,
+        paddingBottom: 5,    
+        backgroundColor: "rgba(0, 0, 0, 0.2)",
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 4
