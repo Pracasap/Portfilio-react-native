@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ImageBackground, FlatList} from 'react-native';
-import { ListItem, Card, Image } from 'react-native-elements';
-import { PROJECTS } from '../shared/projects';
+import { ListItem, Image } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+
+const mapStateToProps = state => {
+    return {
+        projects: state.projects
+    };
+}
 
 const styles = StyleSheet.create({
     bgImage: {
         width: '100%',
-        height: 604,
+        height: 780,
         backgroundColor: "#eaeaea",
         
     },
@@ -23,52 +30,43 @@ const styles = StyleSheet.create({
     },
 })
 
-
-
 class Projects extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            projects: PROJECTS
-        }
-    }
 
     static navigationOptions = {
         title: 'Projects'
     }
 
     render() {
-        
+        const { navigate } = this.props.navigation;
         const renderProject = ({item}) => {
             return (
-                <View style={{padding: 20}}>
+                <View style={{padding: 25}}>
                     <Image
                         transition
                         resizeMode="cover"
-                        //source={`${item.image}`}
-                        source={require(`./images/fineDine.png`)}
+                        source={{uri: baseUrl + item.image}}
                         style={{ width: '100%', height: 250, borderRadius: 1 }}
                     />
                     <ListItem
                         title={item.name}
+                        onPress={() => navigate('ProjectInfo', { projectId: item.id })}
                         subtitle={item.description}
                     />
                 </View>
             );
         };
-
+        
         return (
             <View>
                 <ImageBackground
                     style={styles.bgImage}
                     resizeMode='cover'
-                    source={require('./images/bg.jpg')}
+                    source={{uri: baseUrl + 'images/bg.jpg'}}
                 >
                 <Text style={styles.text}>Projects that make my journey worthwhile</Text>
                 
                 <FlatList
-                    data={this.state.projects}
+                    data={this.props.projects.projects}
                     renderItem={renderProject}
                     keyExtractor={item => item.id.toString()}
                 />
@@ -79,4 +77,4 @@ class Projects extends Component {
     }
 }
 
-export default Projects;
+export default connect(mapStateToProps)(Projects);

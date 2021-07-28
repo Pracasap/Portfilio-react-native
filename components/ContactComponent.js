@@ -6,7 +6,7 @@ import { Card } from 'react-native-elements';
 const styles = StyleSheet.create({
     bgImage: {
         width: '100%',
-        height: 604,
+        height: 780,
         backgroundColor: "#eaeaea",
         
     },

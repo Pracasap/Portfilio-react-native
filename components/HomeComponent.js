@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { ImageBackground, Text, View, StyleSheet, Button } from "react-native";
-
+import { baseUrl } from '../shared/baseUrl';
 
 const styles = StyleSheet.create({
     bgImage: {
         flex: 1,
         width: '100%',
-        height: 604,
+        height: 780,
         backgroundColor: "#eaeaea",
         justifyContent: "center",
         alignItems: "center",
@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
-        paddingTop: 300
+        paddingTop: 350
     },
     subHeadingText: {
         color: "rgb(254, 189, 107)",
-        fontSize: 16,
+        fontSize: 22,
         lineHeight: 30,
         fontWeight: "normal",
         textAlign: "center",
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     },
     aboutText: {
         color: "white",
-        fontSize: 17,
-        lineHeight: 25,
+        fontSize: 20,
+        lineHeight: 30,
         fontWeight: "normal",
         textAlign: "left",
         paddingLeft: 30,
@@ -84,10 +84,10 @@ class Home extends Component {
                 <ImageBackground
                     style={styles.bgImage}
                     resizeMode='cover'
-                    source={require('./images/bg.jpg')}
+                    source={{uri: baseUrl + 'images/bg.jpg'}}
                 >
                 <Text style={styles.text}>Hello, I am Prakash!</Text>
-                <Text style={styles.subHeadingText}>I CREATE BEAUTIFUL WEB AND MOBILE APPS!</Text>
+                <Text style={styles.subHeadingText}>a web developer</Text>
                 <Text style={styles.aboutText}>I am a front-end developer based in Dallas, Texas. I’m passionate about learning the latest and greatest technologies whether that’s the front-end or back-end. I enjoy creating sleek, responsive and user friendly webpages. I am currently open to opportunities and if you feel like we would be a great match, I’d love to hear from you!</Text>
                 <View style={{ flexDirection:"row" }}>
                     <View style={styles.buttonStyle}>
