@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ImageBackground, StyleSheet, Image } from 'react-native';
+import { Text, View, ImageBackground, StyleSheet, Image, Linking } from 'react-native';
 import { Card } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
@@ -35,8 +35,16 @@ const styles = StyleSheet.create({
 })
 
 function RenderProject({project}) {
+    let website;
+    let github;
+    let codepen;
+
     if (project) {
-        
+
+        project.website? website = project.website : website = 'Not Available';
+        project.github? github = project.github : github = 'Not Available';
+        project.codepen? codepen = project.codepen : codepen = 'Not Available';
+    
         return (
             <ImageBackground
                 style={styles.bgImage}
@@ -53,16 +61,22 @@ function RenderProject({project}) {
                         />
                     <Text style={styles.smallText}>
                             {project.description}
-                        </Text>
-                        <Text style={styles.smallText}>
-                        Website: {project.website}
-                        </Text>
-                        <Text style={styles.smallText}>
-                        Github: {project.github}
-                        </Text>
-                        <Text style={styles.smallText}>
-                        Codepen: {project.codepen}
-                        </Text>
+                    </Text>
+                    <Text style={styles.smallText} onPress={() => {
+                        Linking.openURL(website);
+                    }}>
+                        Website: {website}
+                    </Text>
+                    <Text style={styles.smallText} onPress={() => {
+                        Linking.openURL(github);
+                    }}>
+                        Github: {github}
+                    </Text>
+                    <Text style={styles.smallText} onPress={() => {
+                        Linking.openURL(codepen);
+                    }}>
+                        Codepen: {codepen}
+                    </Text>
                 </Card>
             </ImageBackground>
         );
