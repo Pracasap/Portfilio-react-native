@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ImageBackground, FlatList} from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, FlatList, Pressable} from 'react-native';
 import { ListItem, Image } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
@@ -40,19 +40,22 @@ class Projects extends Component {
         const { navigate } = this.props.navigation;
         const renderProject = ({item}) => {
             return (
-                <View style={{padding: 25}}>
-                    <Image
-                        transition
-                        resizeMode="cover"
-                        source={{uri: baseUrl + item.image}}
-                        style={{ width: '100%', height: 250, borderRadius: 1 }}
-                    />
-                    <ListItem
-                        title={item.name}
-                        onPress={() => navigate('ProjectInfo', { projectId: item.id })}
-                        subtitle={item.description}
-                    />
-                </View>
+                <Pressable
+                onPress={() => navigate('ProjectInfo', { projectId: item.id })}
+                >
+                    <View style={{padding: 25}}>
+                        <Image
+                            transition
+                            resizeMode="cover"
+                            source={{uri: baseUrl + item.image}}
+                            style={{ width: '100%', height: 250, borderRadius: 1 }}
+                        />
+                        <ListItem
+                            title={item.name}
+                            subtitle={item.description}
+                        />
+                    </View>
+                </Pressable>
             );
         };
         

@@ -29,11 +29,7 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     smallText: {
-        color: "white",
-        fontSize: 20,
-        textShadowColor: 'rgba(0, 0, 0, 1)',
-        textShadowOffset: {width: -1, height: 1},
-        textShadowRadius: 10,
+        fontSize: 18,
         margin: 10
     },
 })
@@ -48,26 +44,26 @@ function RenderProject({project}) {
                 source={{uri: baseUrl + 'images/bg.jpg'}}
             >
                 <Text style={styles.headerText}>{project.name}</Text>
-                <View style={{padding: 20}}>
+                <Card>
                     <Image
-                        transition
-                        resizeMode="cover"
-                        source={{uri: baseUrl + project.image}}
-                        style={{ width: '100%', height: 250, borderRadius: 1 }}
-                    />
+                            transition
+                            resizeMode="cover"
+                            source={{uri: baseUrl + project.image}}
+                            style={{ width: '100%', height: 250, borderRadius: 1 }}
+                        />
                     <Text style={styles.smallText}>
-                        {project.description}
-                    </Text>
-                    <Text style={styles.smallText}>
-                    Website: {project.website}
-                    </Text>
-                    <Text style={styles.smallText}>
-                    Github: {project.github}
-                    </Text>
-                    <Text style={styles.smallText}>
-                    Codepen: {project.codepen}
-                    </Text>
-                </View>
+                            {project.description}
+                        </Text>
+                        <Text style={styles.smallText}>
+                        Website: {project.website}
+                        </Text>
+                        <Text style={styles.smallText}>
+                        Github: {project.github}
+                        </Text>
+                        <Text style={styles.smallText}>
+                        Codepen: {project.codepen}
+                        </Text>
+                </Card>
             </ImageBackground>
         );
     }
