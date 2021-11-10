@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Portfolio-react-native",
-    "slug": "Portfolio-react-native",
+    "name": "Portfolio-App",
+    "slug": "expo.dev/@prakashsap/Portfolio-App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

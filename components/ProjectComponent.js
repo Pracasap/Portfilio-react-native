@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ImageBackground, FlatList, Pressable} from 'rea
 import { ListItem, Image } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
+import Loading from './LoadingComponent';
 
 const mapStateToProps = state => {
     return {
@@ -13,8 +14,12 @@ const mapStateToProps = state => {
 const styles = StyleSheet.create({
     bgImage: {
         width: '100%',
-        height: 780,
+        height: '100%',
         backgroundColor: "#eaeaea",
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
         
     },
     text: {
@@ -26,7 +31,7 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
-        marginTop: 15
+        margin: 10
     },
 })
 
@@ -43,12 +48,12 @@ class Projects extends Component {
                 <Pressable
                 onPress={() => navigate('ProjectInfo', { projectId: item.id })}
                 >
-                    <View style={{padding: 25}}>
+                    <View style={{marginBottom: 30, margin: 0}}>
                         <Image
                             transition
                             resizeMode="cover"
                             source={{uri: baseUrl + item.image}}
-                            style={{ width: '100%', height: 250, borderRadius: 1 }}
+                            style={{ width: '100%', height: 280 }}
                         />
                         <ListItem
                             title={item.name}
@@ -58,7 +63,34 @@ class Projects extends Component {
                 </Pressable>
             );
         };
-        
+
+        if (this.props.projects.isLoading) {
+            return (
+                <View>
+                    <ImageBackground
+                        style={styles.bgImage}
+                        resizeMode='cover'
+                        source={{uri: baseUrl + 'images/bg.jpg'}}
+                    >
+                    <Loading/>
+                    </ImageBackground>
+                </View>
+            )
+        }
+
+        if (this.props.projects.errMess) {
+            return (
+                <View>
+                    <ImageBackground
+                        style={styles.bgImage}
+                        resizeMode='cover'
+                        source={{uri: baseUrl + 'images/bg.jpg'}}
+                    >
+                    <Text>{this.props.projects.errMess}</Text>
+                    </ImageBackground>
+                </View>
+            )
+        }
         return (
             <View>
                 <ImageBackground

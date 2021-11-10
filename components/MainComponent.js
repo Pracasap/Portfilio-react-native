@@ -4,7 +4,7 @@ import Projects from './ProjectComponent';
 import ProjectInfo from './ProjectInfoComponent';
 import Contact from './ContactComponent';
 import Constants from 'expo-constants';
-import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
+import { View, Platform, StyleSheet, Text, ScrollView } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation';

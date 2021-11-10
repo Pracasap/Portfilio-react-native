@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ImageBackground } from 'react-native';
-import { Card } from 'react-native-elements';
 
 
 const styles = StyleSheet.create({
     bgImage: {
         width: '100%',
-        height: 780,
+        height: '100%',
         backgroundColor: "#eaeaea",
         
     },
